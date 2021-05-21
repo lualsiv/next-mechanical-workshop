@@ -1,0 +1,1 @@
+{"version":3,"file":"User.d.ts","sourceRoot":"","sources":["../../../../../src/adapter/faunadb/user/adapter/User.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,WAAW,EAAE,UAAU,EAAE,MAAM,YAAY,CAAC;AAKrD,qBAAa,cAAe,YAAW,WAAW;IAEjC,OAAO,CAAC,EAAE,EAAE,MAAM;IAclB,MAAM,CAAC,UAAU,EAAE,UAAU;IAO7B,MAAM,CAAC,EAAE,EAAE,MAAM;CAQ/B"}

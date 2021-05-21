@@ -1,0 +1,19 @@
+{
+  "name": "schema",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "lualsiv <lualsiv@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b",
+    "rebuild": "run-s clean reinstall build",
+    "clean": "run-p clean:*",
+    "clean:lib": "rimraf lib *.tsbuildinfo",
+    "clean:modules": "rimraf node_modules",
+    "reinstall": "yarn install",
+    "codegen": "run-s codegen:*",
+    "codegen:schema": "graphql-codegen --config codegen.yml",
+    "codegen:implements": "graphql-codegen --config codegen.implements.yml"
+  }
+}

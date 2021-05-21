@@ -1,0 +1,16 @@
+enum BudgetStatus {
+  OPENED
+  WAITINGFORAPPROVAL
+  OKAY
+  RUNNING
+  READY
+}
+
+type Budget{
+  createdAt: Time
+  updatedAt: Time!
+  dueDate: Time!
+  vehicle: Vehicle @relation
+  owner: User @relation
+  status: BudgetStatus
+}

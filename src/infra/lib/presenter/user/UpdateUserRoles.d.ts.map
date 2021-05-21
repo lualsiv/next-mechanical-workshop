@@ -1,0 +1,1 @@
+{"version":3,"file":"UpdateUserRoles.d.ts","sourceRoot":"","sources":["../../../src/presenter/user/UpdateUserRoles.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,IAAI,EAAE,MAAM,QAAQ,CAAC;AAC9B,OAAO,EAAE,wBAAwB,EAAE,yBAAyB,EAAE,MAAM,YAAY,CAAC;AAIjF,qBAAa,2BAA4B,YAAW,wBAAwB;IAC1E,OAAO,CAAC,QAAQ,CAAqB;IAE9B,WAAW;IAIL,MAAM,CAAC,QAAQ,EAAE,yBAAyB;CAGxD"}

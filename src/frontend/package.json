@@ -1,0 +1,34 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "rebuild": "run-s clean reinstall build",
+    "clean": "run-p clean:*",
+    "clean:next": "rimraf .next",
+    "clean:modules": "rimraf node_modules",
+    "reinstall": "yarn install",
+    "start": "next start -p 8888",
+    "setup": "run-s setup:env",
+    "setup:env": "node -e \"require('fs').copyFileSync('./.env.default', './.env')\""
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.4",
+    "@material-ui/icons": "^4.11.2",
+    "domain": "file:../domain",
+    "formik": "^2.2.6",
+    "infra": "file:../infra",
+    "next": "10.2.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "sass": "^1.32.12",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.5",
+    "@types/yup": "^0.29.11",
+    "typescript": "^4.2.4"
+  }
+}

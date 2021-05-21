@@ -1,0 +1,87 @@
+# schema {
+#   query: Query
+#   mutation: Mutation
+# }
+type Address @embedded {
+  street: String!
+  number: Int
+  city: String!
+  state: String!
+  zipCode: String!
+}
+type Budget {
+  createdAt: Time
+  updatedAt: Time!
+  dueDate: Time!
+  vehicle: Vehicle @relation
+  owner: User @relation
+  status: BudgetStatus
+}
+enum BudgetStatus {
+  OPENED
+  WAITINGFORAPPROVAL
+  OKAY
+  RUNNING
+  READY
+}
+type Client @embedded {
+  name: String
+  cpf: String
+  rg: String
+  birthDate: Time
+  telephone: String
+  address: Address
+}
+type Mutation {
+  # deleteUser(id: ID!): User!
+  signInEmailPassword(input: SignInEmailPasswordRequest): String! @resolver(name: "login_user")
+  signUpEmailPassword(input: SignUpEmailPasswordRequest): User! @resolver(name: "create_user")
+  # updateUser(id: ID!, data: UserInput!): User!
+}
+type Query {
+  allUsers: [User]
+  # findUserByID(id: ID!): User
+  findUserByEmail(email: String): User
+}
+enum Role {
+  ANONYMOUS
+  MEMBER
+  ADMIN
+}
+input SignInEmailPasswordRequest {
+  email: String!
+  password: String!
+}
+input SignUpEmailPasswordRequest {
+  email: String!
+  name: String!
+  password: String!
+  roles: [Role!]!
+  createdAt: Time
+}
+# scalar Time
+type User {
+  # _id: ID!
+  email: String! @unique
+  roles: [Role!]!
+  createdAt: Time
+  updatedAt: Time
+  client: Client
+}
+input UserInput {
+  email: String!
+  roles: [Role!]!
+  createdAt: Time
+  updatedAt: Time
+}
+type Vehicle {
+  licensePlate: String
+  color: String
+  year: Int
+  createdAt: Time
+  vehicleMaker: VehicleMaker @relation
+  owner: User @relation
+}
+type VehicleMaker {
+  name: String
+}

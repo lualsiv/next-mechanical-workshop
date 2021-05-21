@@ -1,0 +1,31 @@
+enum Role {
+  ANONYMOUS
+  MEMBER
+  ADMIN
+}
+
+type User {
+  _id: ID!
+  email: String! @unique
+  roles: [Role!]!
+  createdAt: Time
+  updatedAt: Time
+  client: Client
+}
+
+type Client @embedded{
+  name: String
+  cpf: String
+  rg: String
+  birthDate: Time
+  telephone: String
+  address: Address
+}
+
+type Address @embedded {
+  street: String!
+  number: Int
+  city: String!
+  state: String!
+  zipCode: String!
+}

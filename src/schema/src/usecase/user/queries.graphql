@@ -1,0 +1,33 @@
+type Query{
+    allUsers: [User]
+    findUserByID(id: ID!): User
+    findUserByEmail(email: String): User
+}
+
+query AllUsers{
+    allUsers{
+        _id
+        email
+        createdAt
+    }
+}
+
+query FindUserById($id: ID!){
+  findUserByID(id: $id){
+    _id
+    email
+    roles
+    createdAt
+    updatedAt
+  }
+}
+
+query FindUserByEmail($email: String){
+  findUserByEmail(email: $email){
+    _id
+    email
+    roles
+    createdAt
+    updatedAt
+  }
+}

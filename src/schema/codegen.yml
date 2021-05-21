@@ -1,0 +1,14 @@
+overwrite: true
+schema: 'src/**/*.graphql'
+generates:
+  schema.graphql:
+    plugins:
+      - schema-ast
+    config:
+      includeDirectives: true
+  ./graphql.schema.json:
+    plugins:
+      - introspection
+config:
+  scalars:
+    Time: Date

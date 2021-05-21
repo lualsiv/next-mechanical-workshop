@@ -1,0 +1,77 @@
+input SignUpEmailPasswordRequest {
+  email: String!
+  name: String!
+  password: String!
+  roles: [Role!]!
+  createdAt: Time  
+}
+
+input SignInEmailPasswordRequest {
+  email: String!
+  password: String!
+}
+
+type Mutation {
+  signUpEmailPassword(input: SignUpEmailPasswordRequest): User! @resolver(name: "create_user")
+  signInEmailPassword(input: SignInEmailPasswordRequest): String! @resolver(name: "login_user")
+}
+
+mutation SignInEmailPasswordRequest($input: SignInEmailPasswordRequest) {
+  signInEmailPassword(input: $input)
+}
+
+mutation SignUpEmailPassword($input: SignUpEmailPasswordRequest) {
+  signUpEmailPassword(input: $input) {
+    _id
+    email
+    roles
+    createdAt    
+    client{
+      name
+    }
+  }
+}
+
+# Update(Function("create_user"), {
+#   "body": Query(
+#     Lambda(["input"],
+#       Create(Collection("User"), {
+#         data: {
+#           email: Select("email", Var("input")),
+#           roles: Select("roles", Var("input")),
+#           createdAt: Select("createdAt", Var("input")),
+#           client: {  
+#             name: Select("name", Var("input"))
+#           }
+#         },
+#         credentials: {
+#           password: Select("password", Var("input"))
+#         }
+#       })
+#     )
+#   )
+# });
+
+# Update(Function("logout_user"), {
+#   "body": Query(
+#     Lambda(["deleteAllTokens"],
+#       Logout(
+#         Var("deleteAllTokens")
+#       )
+#     )
+#   )
+# });
+
+# Update(Function("login_user"), {
+#   "body": Query(
+#     Lambda(["input"],
+#       Select(
+#         "secret",
+#         Login(
+#           Match(Index("unique_User_email"), Select("email", Var("input"))),
+#           { password: Select("password", Var("input")) }
+#         )
+#       )
+#     )
+#   )
+# });

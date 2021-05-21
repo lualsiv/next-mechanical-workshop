@@ -1,0 +1,32 @@
+{
+  "name": "domain",
+  "version": "1.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "author": "lualsiv <lualsiv@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -b",
+    "rebuild": "run-s clean reinstall build",
+    "clean": "run-p clean:*",
+    "clean:lib": "rimraf lib *.tsbuildinfo",
+    "clean:modules": "rimraf node_modules",
+    "clean:coverage": "rimraf coverage",
+    "reinstall": "yarn install",
+    "test": "jest",
+    "test:watch": "yarn test --watch",
+    "test:cov": "run-s test:cov:run test:cov:open",
+    "test:cov:run": "yarn test --coverage",
+    "test:cov:open": "npx http-server -o ./coverage/lcov-report",
+    "test:cov:watch": "yarn test --coverage --watch",
+    "setup": "run-s setup:env",
+    "setup:env": "node -e \"require('fs').copyFileSync('./.env.default', './.env')\""
+  },
+  "dependencies": {
+    "common": "file:../common",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "env-cmd": "^10.1.0"
+  }
+}

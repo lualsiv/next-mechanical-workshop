@@ -1,0 +1,8 @@
+type Vehicle {
+  licensePlate: String
+  color: String
+  year: Int
+  createdAt: Time
+  vehicleMaker: VehicleMaker @relation
+  owner: User @relation
+}

@@ -1,6 +1,5 @@
 import { PropertyRequiredError, IllegalArgumentError } from 'common';
 import { denyIllegalEmail } from '../common/Email';
-import { denyIllegalPassword } from '../common/Password';
 
 import { Role, RoleType } from '../common/Role';
 import { TimeStampTypes, denyDoesNotHaveRequiredProperties } from '../utils';
@@ -21,8 +20,7 @@ export const denyIllegalRoles = (roles: string[]) => {
 
 export const denyIllegalUserDto = (user: UserDto) => {
   if (!user) throw new PropertyRequiredError('user');
-  denyDoesNotHaveRequiredProperties(user, ['id', 'email', 'name', 'roles']);
+  denyDoesNotHaveRequiredProperties(user, ['_id', 'email', 'name', 'roles']);
   denyIllegalRoles(user.roles);
-  denyIllegalEmail(user.email);
-  denyIllegalPassword(user.password);
+  denyIllegalEmail(user.email);  
 };

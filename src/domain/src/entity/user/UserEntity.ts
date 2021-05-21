@@ -4,14 +4,13 @@ import { UserDto, denyIllegalUserDto } from './UserDto';
 import { ID } from '../common/ID';
 import { Email } from '../common/Email';
 import { Role, RoleTypes, RoleType } from '../common/Role';
-import { Password } from '../common/Password';
 
 export class UserEntity {
   private id: ID;
   private email: Email;
   private name: string;
   private roles: Role[] = [new Role(RoleTypes.Anonymous)];
-  private password: Password;
+  private password: string;
 
   constructor(user: UserDto) {
     denyIllegalUserDto(user);
@@ -19,7 +18,7 @@ export class UserEntity {
     this.email = new Email(user.email);
     this.name = user.name;
     this.roles = user.roles.map((role) => new Role(role as RoleType));
-    this.password = new Password(user.password)
+    this.password = user.password;//new Password(user.password);
   }
 
   getId() {
@@ -30,7 +29,7 @@ export class UserEntity {
     return this.email;
   }
 
-  getName(){
+  getName() {
     return this.name;
   }
 
@@ -52,7 +51,7 @@ export class UserEntity {
     this.isValid();
   }
 
-  setName(name: string){
+  setName(name: string) {
     this.name = name;
     this.isValid();
   }
@@ -88,8 +87,8 @@ export class UserEntity {
       _id: this.id.toString(),
       email: this.email.toString(),
       roles: this.roles.map((role) => role.toString()),
-      password: this.password.toString(),
-      name: this.name
+      password: this.password,
+      name: this.name,
     };
   }
 

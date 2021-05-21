@@ -246,14 +246,9 @@
         "signature": "3bf0546af8b40eaeb97f0ff6dd75e1e9c41ef4a82db6e589aadf5f3df8b67987",
         "affectsGlobalScope": false
       },
-      "./node_modules/domain/lib/entity/common/password/index.d.ts": {
-        "version": "836415e0520483cb96808bb3c40dd582faa74e6f99d56f530caf9da7b1168bcd",
-        "signature": "836415e0520483cb96808bb3c40dd582faa74e6f99d56f530caf9da7b1168bcd",
-        "affectsGlobalScope": false
-      },
       "./node_modules/domain/lib/entity/user/userentity.d.ts": {
-        "version": "8f5f1efb67d8505a5209f7574ada03e97446a5abfabf348eed269d1e18c17259",
-        "signature": "8f5f1efb67d8505a5209f7574ada03e97446a5abfabf348eed269d1e18c17259",
+        "version": "c3b27e04ebb25da2c9c3263032b2d08c9284cd70f1623ad9e3cdaf8b00bf6794",
+        "signature": "c3b27e04ebb25da2c9c3263032b2d08c9284cd70f1623ad9e3cdaf8b00bf6794",
         "affectsGlobalScope": false
       },
       "./node_modules/domain/lib/entity/user/index.d.ts": {
@@ -2716,7 +2711,6 @@
       "./node_modules/domain/lib/entity/user/userentity.d.ts": [
         "./node_modules/domain/lib/entity/common/email/index.d.ts",
         "./node_modules/domain/lib/entity/common/id.d.ts",
-        "./node_modules/domain/lib/entity/common/password/index.d.ts",
         "./node_modules/domain/lib/entity/common/role.d.ts",
         "./node_modules/domain/lib/entity/user/userdto.d.ts"
       ],
@@ -3998,7 +3992,6 @@
       "./node_modules/domain/lib/entity/user/userentity.d.ts": [
         "./node_modules/domain/lib/entity/common/email/index.d.ts",
         "./node_modules/domain/lib/entity/common/id.d.ts",
-        "./node_modules/domain/lib/entity/common/password/index.d.ts",
         "./node_modules/domain/lib/entity/common/role.d.ts",
         "./node_modules/domain/lib/entity/user/userdto.d.ts"
       ],
@@ -4457,7 +4450,6 @@
       "./node_modules/domain/lib/entity/common/email/index.d.ts",
       "./node_modules/domain/lib/entity/common/id.d.ts",
       "./node_modules/domain/lib/entity/common/index.d.ts",
-      "./node_modules/domain/lib/entity/common/password/index.d.ts",
       "./node_modules/domain/lib/entity/common/role.d.ts",
       "./node_modules/domain/lib/entity/index.d.ts",
       "./node_modules/domain/lib/entity/user/index.d.ts",

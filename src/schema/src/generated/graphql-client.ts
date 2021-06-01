@@ -150,12 +150,12 @@ export type VehicleMaker = {
   name?: Maybe<Scalars['String']>;
 };
 
-export type SignInEmailPasswordRequestMutationVariables = Exact<{
+export type SignInEmailPasswordMutationVariables = Exact<{
   input?: Maybe<SignInEmailPasswordRequest>;
 }>;
 
 
-export type SignInEmailPasswordRequestMutation = (
+export type SignInEmailPasswordMutation = (
   { __typename?: 'Mutation' }
   & Pick<Mutation, 'signInEmailPassword'>
 );
@@ -242,8 +242,8 @@ export type FindUserByEmailQuery = (
 );
 
 
-export const SignInEmailPasswordRequestDocument = gql`
-    mutation SignInEmailPasswordRequest($input: SignInEmailPasswordRequest) {
+export const SignInEmailPasswordDocument = gql`
+    mutation SignInEmailPassword($input: SignInEmailPasswordRequest) {
   signInEmailPassword(input: $input)
 }
     `;
@@ -320,8 +320,8 @@ export type SdkFunctionWrapper = <T>(action: () => Promise<T>) => Promise<T>;
 const defaultWrapper: SdkFunctionWrapper = sdkFunction => sdkFunction();
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    SignInEmailPasswordRequest(variables?: SignInEmailPasswordRequestMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignInEmailPasswordRequestMutation> {
-      return withWrapper(() => client.request<SignInEmailPasswordRequestMutation>(SignInEmailPasswordRequestDocument, variables, requestHeaders));
+    SignInEmailPassword(variables?: SignInEmailPasswordMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignInEmailPasswordMutation> {
+      return withWrapper(() => client.request<SignInEmailPasswordMutation>(SignInEmailPasswordDocument, variables, requestHeaders));
     },
     SignUpEmailPassword(variables?: SignUpEmailPasswordMutationVariables, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignUpEmailPasswordMutation> {
       return withWrapper(() => client.request<SignUpEmailPasswordMutation>(SignUpEmailPasswordDocument, variables, requestHeaders));

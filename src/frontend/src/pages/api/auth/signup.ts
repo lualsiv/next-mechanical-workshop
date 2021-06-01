@@ -1,6 +1,7 @@
 import { SignUpEmailPasswordInteractor } from 'domain/lib/usecase/auth';
 import signUpContainer from 'infra/lib/dependency-injection/SignUp/container';
 import { GqlSignUpEmailPasswordPresenter } from 'infra/lib/presenter/auth/SignUpEmailPassword';
+import { setAuthCookie } from '../../../utils/auth-cookies';
 
 export default async function signup(req, res) {
   const { email, password, name, roles, createdAt } = req.body;
@@ -13,15 +14,16 @@ export default async function signup(req, res) {
   try {
     await useCase.handle({ email, password, name, roles, createdAt });
 
-    let presenter = signUpContainer.resolve<GqlSignUpEmailPasswordPresenter>('useCase');
+    let presenter = signUpContainer.resolve<GqlSignUpEmailPasswordPresenter>('presenter');
 
-    presenter.getResponse();
-    // setAuthCookie(res, auth.secret);
+    console.info("presenter:", presenter);
+    var ret = presenter.getResponse();
+    setAuthCookie(res, ret.token);
     // Cookies.set('token', token, { expires: 60 })
     
-    res.status(200).end();
+    res.status(200).send(ret);
   } catch (error) {
     console.error(error);
-    res.status(error.requestResult.statusCode).send(error.message);
+    res.status(500).send(error.message);
   }
 }

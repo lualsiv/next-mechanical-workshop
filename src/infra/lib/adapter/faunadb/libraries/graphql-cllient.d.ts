@@ -1,7 +1,7 @@
 declare const sdk: {
-    SignInEmailPasswordRequest(variables?: import("schema").Exact<{
+    SignInEmailPassword(variables?: import("schema").Exact<{
         input?: import("schema").Maybe<import("schema").SignInEmailPasswordRequest> | undefined;
-    }> | undefined, requestHeaders?: (import("graphql-request/dist/types.dom").Headers | string[][] | Record<string, string>) | undefined): Promise<import("schema").SignInEmailPasswordRequestMutation>;
+    }> | undefined, requestHeaders?: (import("graphql-request/dist/types.dom").Headers | string[][] | Record<string, string>) | undefined): Promise<import("schema").SignInEmailPasswordMutation>;
     SignUpEmailPassword(variables?: import("schema").Exact<{
         input?: import("schema").Maybe<import("schema").SignUpEmailPasswordRequest> | undefined;
     }> | undefined, requestHeaders?: (import("graphql-request/dist/types.dom").Headers | string[][] | Record<string, string>) | undefined): Promise<import("schema").SignUpEmailPasswordMutation>;

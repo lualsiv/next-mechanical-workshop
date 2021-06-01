@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getSdk = exports.FindUserByEmailDocument = exports.FindUserByIdDocument = exports.AllUsersDocument = exports.DeleteUserDocument = exports.UpdatUserDocument = exports.SignUpEmailPasswordDocument = exports.SignInEmailPasswordRequestDocument = exports.Role = exports.BudgetStatus = void 0;
+exports.getSdk = exports.FindUserByEmailDocument = exports.FindUserByIdDocument = exports.AllUsersDocument = exports.DeleteUserDocument = exports.UpdatUserDocument = exports.SignUpEmailPasswordDocument = exports.SignInEmailPasswordDocument = exports.Role = exports.BudgetStatus = void 0;
 const graphql_tag_1 = __importDefault(require("graphql-tag"));
 var BudgetStatus;
 (function (BudgetStatus) {
@@ -19,8 +19,8 @@ var Role;
     Role["Member"] = "MEMBER";
     Role["Admin"] = "ADMIN";
 })(Role = exports.Role || (exports.Role = {}));
-exports.SignInEmailPasswordRequestDocument = graphql_tag_1.default `
-    mutation SignInEmailPasswordRequest($input: SignInEmailPasswordRequest) {
+exports.SignInEmailPasswordDocument = graphql_tag_1.default `
+    mutation SignInEmailPassword($input: SignInEmailPasswordRequest) {
   signInEmailPassword(input: $input)
 }
     `;
@@ -93,8 +93,8 @@ exports.FindUserByEmailDocument = graphql_tag_1.default `
 const defaultWrapper = sdkFunction => sdkFunction();
 function getSdk(client, withWrapper = defaultWrapper) {
     return {
-        SignInEmailPasswordRequest(variables, requestHeaders) {
-            return withWrapper(() => client.request(exports.SignInEmailPasswordRequestDocument, variables, requestHeaders));
+        SignInEmailPassword(variables, requestHeaders) {
+            return withWrapper(() => client.request(exports.SignInEmailPasswordDocument, variables, requestHeaders));
         },
         SignUpEmailPassword(variables, requestHeaders) {
             return withWrapper(() => client.request(exports.SignUpEmailPasswordDocument, variables, requestHeaders));

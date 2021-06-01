@@ -15,6 +15,11 @@ class GqlAuthEmailPasswordAdapter {
         const result = await graphql_cllient_1.sdk.SignUpEmailPassword({ input: auth });
         return user_1.UserFactory.toEntity(result.signUpEmailPassword);
     }
+    async signin(request) {
+        const auth = request;
+        const result = await graphql_cllient_1.sdk.SignInEmailPassword({ input: auth });
+        return result.signInEmailPassword;
+    }
 }
 exports.GqlAuthEmailPasswordAdapter = GqlAuthEmailPasswordAdapter;
 //# sourceMappingURL=AuthEmailPassword.js.map

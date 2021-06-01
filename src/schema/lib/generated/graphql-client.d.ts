@@ -130,10 +130,10 @@ export declare type VehicleMaker = {
     __typename?: 'VehicleMaker';
     name?: Maybe<Scalars['String']>;
 };
-export declare type SignInEmailPasswordRequestMutationVariables = Exact<{
+export declare type SignInEmailPasswordMutationVariables = Exact<{
     input?: Maybe<SignInEmailPasswordRequest>;
 }>;
-export declare type SignInEmailPasswordRequestMutation = ({
+export declare type SignInEmailPasswordMutation = ({
     __typename?: 'Mutation';
 } & Pick<Mutation, 'signInEmailPassword'>);
 export declare type SignUpEmailPasswordMutationVariables = Exact<{
@@ -201,7 +201,7 @@ export declare type FindUserByEmailQuery = ({
         __typename?: 'User';
     } & Pick<User, '_id' | 'email' | 'roles' | 'createdAt' | 'updatedAt'>)>;
 });
-export declare const SignInEmailPasswordRequestDocument: import("graphql").DocumentNode;
+export declare const SignInEmailPasswordDocument: import("graphql").DocumentNode;
 export declare const SignUpEmailPasswordDocument: import("graphql").DocumentNode;
 export declare const UpdatUserDocument: import("graphql").DocumentNode;
 export declare const DeleteUserDocument: import("graphql").DocumentNode;
@@ -210,9 +210,9 @@ export declare const FindUserByIdDocument: import("graphql").DocumentNode;
 export declare const FindUserByEmailDocument: import("graphql").DocumentNode;
 export declare type SdkFunctionWrapper = <T>(action: () => Promise<T>) => Promise<T>;
 export declare function getSdk(client: GraphQLClient, withWrapper?: SdkFunctionWrapper): {
-    SignInEmailPasswordRequest(variables?: Exact<{
+    SignInEmailPassword(variables?: Exact<{
         input?: Maybe<SignInEmailPasswordRequest> | undefined;
-    }> | undefined, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignInEmailPasswordRequestMutation>;
+    }> | undefined, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignInEmailPasswordMutation>;
     SignUpEmailPassword(variables?: Exact<{
         input?: Maybe<SignUpEmailPasswordRequest> | undefined;
     }> | undefined, requestHeaders?: Dom.RequestInit["headers"]): Promise<SignUpEmailPasswordMutation>;

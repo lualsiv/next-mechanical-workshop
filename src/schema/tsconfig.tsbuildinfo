@@ -732,8 +732,8 @@
         "affectsGlobalScope": false
       },
       "./src/generated/graphql-client.ts": {
-        "version": "ae01c1fb8e9e8c4f1c577aa08c34160649102cebdbfef65f4fae26571d23470e",
-        "signature": "fcbd38423c2826c31136d348c2cc4a2b74f3bb046648fbb44065b1ee6bd2a4a2",
+        "version": "db8fd8cfe98171478b79929d72742d62482cc6ea672f1b63c749e14f46234df5",
+        "signature": "91a86590665772beb55514f1c2ce3592880022f057a6ec344a346d50f1c44c22",
         "affectsGlobalScope": false
       },
       "./src/index.ts": {
@@ -769,6 +769,11 @@
       "../../node_modules/@types/babel__core/index.d.ts": {
         "version": "6f1d39d26959517da3bd105c552eded4c34702705c64d75b03f54d864b6e41c2",
         "signature": "6f1d39d26959517da3bd105c552eded4c34702705c64d75b03f54d864b6e41c2",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/cookie/index.d.ts": {
+        "version": "90643a7d80d87f379ec4c6448a4b5e473b7fb64062ac649a61d93b3a1a8b2180",
+        "signature": "90643a7d80d87f379ec4c6448a4b5e473b7fb64062ac649a61d93b3a1a8b2180",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/node/globals.d.ts": {
@@ -3328,6 +3333,7 @@
       "../../node_modules/@types/babel__generator/index.d.ts",
       "../../node_modules/@types/babel__template/index.d.ts",
       "../../node_modules/@types/babel__traverse/index.d.ts",
+      "../../node_modules/@types/cookie/index.d.ts",
       "../../node_modules/@types/fs-extra/index.d.ts",
       "../../node_modules/@types/glob/index.d.ts",
       "../../node_modules/@types/graceful-fs/index.d.ts",

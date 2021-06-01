@@ -16,7 +16,7 @@ type Mutation {
   signInEmailPassword(input: SignInEmailPasswordRequest): String! @resolver(name: "login_user")
 }
 
-mutation SignInEmailPasswordRequest($input: SignInEmailPasswordRequest) {
+mutation SignInEmailPassword($input: SignInEmailPasswordRequest) {
   signInEmailPassword(input: $input)
 }
 

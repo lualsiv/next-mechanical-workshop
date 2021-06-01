@@ -357,8 +357,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/domain/lib/usecase/auth/interfaces/adapter.d.ts": {
-        "version": "4cd652e35e0bcfc973095f6cdb2ab9bf01d7f6093706ee39fac58ba624bd05d2",
-        "signature": "4cd652e35e0bcfc973095f6cdb2ab9bf01d7f6093706ee39fac58ba624bd05d2",
+        "version": "cdfcc5c19482d811aeb3b178876ec0a382d859b1db9430b3e1e0af69785787b3",
+        "signature": "cdfcc5c19482d811aeb3b178876ec0a382d859b1db9430b3e1e0af69785787b3",
         "affectsGlobalScope": false
       },
       "./node_modules/domain/lib/usecase/auth/signupemailpassword.d.ts": {
@@ -892,8 +892,8 @@
         "affectsGlobalScope": false
       },
       "./node_modules/schema/lib/generated/graphql-client.d.ts": {
-        "version": "fcbd38423c2826c31136d348c2cc4a2b74f3bb046648fbb44065b1ee6bd2a4a2",
-        "signature": "fcbd38423c2826c31136d348c2cc4a2b74f3bb046648fbb44065b1ee6bd2a4a2",
+        "version": "91a86590665772beb55514f1c2ce3592880022f057a6ec344a346d50f1c44c22",
+        "signature": "91a86590665772beb55514f1c2ce3592880022f057a6ec344a346d50f1c44c22",
         "affectsGlobalScope": false
       },
       "./node_modules/schema/lib/index.d.ts": {
@@ -908,7 +908,7 @@
       },
       "./src/adapter/faunadb/libraries/graphql-cllient.ts": {
         "version": "f3cbb03d9c8bd7f0fd84902485be91e6d4687e6fa098aa4566c453515045f58f",
-        "signature": "f1628139ed88318c543ab49f7daf5fc6ea37a9f1a6e469a34b95519cfd1fbe41",
+        "signature": "ca916bffab57e4ce7e10f69c3d192e07a9fc521d7db6f0d2c650236a9b3c0a4c",
         "affectsGlobalScope": false
       },
       "./node_modules/common/lib/error/authenticationfailed.d.ts": {
@@ -1262,13 +1262,13 @@
         "affectsGlobalScope": false
       },
       "./src/presenter/auth/signupemailpassword.ts": {
-        "version": "aeca68141c1a54a45f0afa1288924b2b9368bd24d9a19c070e00cd7094a5cbf9",
-        "signature": "b2e5c7d09235ed4f056036c73fb4b7c3ecf867b408704f0db6c6ca8e8cee7b05",
+        "version": "def95de46e007fbf5c404ac68f64de47dcac05c50f88279dcc035e50be98d625",
+        "signature": "2d7132dfb75801dc067c206d085af82eb222c910cd37f25b2e4f0ec729a87e31",
         "affectsGlobalScope": false
       },
       "./src/adapter/faunadb/auth/adapter/authemailpassword.ts": {
-        "version": "9109a1bb40567af93767be5565ba49fed245c0e3da6eb0e139f28c5fec15bebc",
-        "signature": "30615d752892623283a0e1228b5e593da6aeabe8a79e9849286088dc57291e32",
+        "version": "b8797f6c88b4ecc9c5bda341c736edf5a63091cae4635f037ce7d71c4632c80c",
+        "signature": "525581fa196e5c369dfe261d721e30b26c845aaab8aadcb0a1413a7531757bf1",
         "affectsGlobalScope": false
       },
       "./src/dependency-injection/signup/container.ts": {
@@ -1359,6 +1359,11 @@
       "../../node_modules/@types/babel__core/index.d.ts": {
         "version": "6f1d39d26959517da3bd105c552eded4c34702705c64d75b03f54d864b6e41c2",
         "signature": "6f1d39d26959517da3bd105c552eded4c34702705c64d75b03f54d864b6e41c2",
+        "affectsGlobalScope": false
+      },
+      "../../node_modules/@types/cookie/index.d.ts": {
+        "version": "90643a7d80d87f379ec4c6448a4b5e473b7fb64062ac649a61d93b3a1a8b2180",
+        "signature": "90643a7d80d87f379ec4c6448a4b5e473b7fb64062ac649a61d93b3a1a8b2180",
         "affectsGlobalScope": false
       },
       "../../node_modules/@types/fs-extra/index.d.ts": {
@@ -4186,6 +4191,7 @@
       "../../node_modules/@types/babel__generator/index.d.ts",
       "../../node_modules/@types/babel__template/index.d.ts",
       "../../node_modules/@types/babel__traverse/index.d.ts",
+      "../../node_modules/@types/cookie/index.d.ts",
       "../../node_modules/@types/fs-extra/index.d.ts",
       "../../node_modules/@types/glob/index.d.ts",
       "../../node_modules/@types/graceful-fs/index.d.ts",

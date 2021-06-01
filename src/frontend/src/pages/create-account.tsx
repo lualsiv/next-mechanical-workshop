@@ -1,4 +1,5 @@
 import { Box, createStyles, Link, makeStyles, Theme } from '@material-ui/core';
+import { useRouter } from 'next/router';
 import Button from '@material-ui/core/Button';
 import Divider from '@material-ui/core/Divider';
 import InputAdornment from '@material-ui/core/InputAdornment';
@@ -12,10 +13,11 @@ import PersonIcon from '@material-ui/icons/Person';
 import { useFormik } from 'formik';
 import NextLink from 'next/link';
 import React, { useContext, useState } from 'react';
+import { getToken, resetToken, setToken } from '../libraries/auth-token';
 import * as Yup from 'yup';
 import CopyrightComponent from '@components/screen/Copyright/Copyright';
 import FormLoadingComponent from '@components/screen/FormLoading/FormLoading';
-import { SingUpContainerContext } from 'lib/contexts';
+import { UserDto } from 'domain/lib/entity/user';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -53,11 +55,15 @@ interface IFormData {
   password: string;
   confirmPassword: string;
   roles: string[];
-  createdAt: Date
+  createdAt: Date;
 }
 
+type PickedUser = Pick<UserDto, '_id' | 'roles' | 'email'>;
+type Actor = PickedUser | null;
+
 export default function CreateAccountPage() {
-  const { useCase } = useContext(SingUpContainerContext).cradle;
+  const [actor, setActor] = useState<Actor>(null);
+  const router = useRouter();
   const classes = useStyles();
   const [errorMessage, setErrorMessage] = useState('');
 
@@ -67,7 +73,7 @@ export default function CreateAccountPage() {
     password: '',
     confirmPassword: '',
     roles: ['MEMBER'],
-    createdAt: new Date()
+    createdAt: new Date(),
   };
 
   const formSchema = Yup.object().shape({
@@ -95,7 +101,11 @@ export default function CreateAccountPage() {
         });
 
         if (res.ok) {
-          // router.push('/');
+          const { token, user } = (await res.json()) || {};
+
+          if (token) setToken(token);
+          if (user) setActor(user);
+          router.push('/');
         } else {
           throw new Error(await res.text());
         }

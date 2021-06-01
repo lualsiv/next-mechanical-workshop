@@ -10,7 +10,8 @@ class GqlSignUpEmailPasswordPresenter {
         return this.response;
     }
     async output(response) {
-        this.response = user_1.toGqlUser(response.user);
+        var user = user_1.toGqlUser(response.user);
+        this.response = { user: user, token: response.token };
     }
 }
 exports.GqlSignUpEmailPasswordPresenter = GqlSignUpEmailPasswordPresenter;

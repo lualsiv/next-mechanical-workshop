@@ -8,9 +8,6 @@ import {
   SignUpEmailPasswordOutputData,
   SignUpEmailPasswordPresenter,
 } from './interfaces/presenter';
-import { UserAdapter } from '../user/interface/adapter';
-
-// dotenv.config();
 
 export class SignUpEmailPasswordInteractor implements SignUpEmailPasswordUseCase {
   private authAdapter: AuthEmailPasswordAdapter;
@@ -37,13 +34,19 @@ export class SignUpEmailPasswordInteractor implements SignUpEmailPasswordUseCase
 
     const userId = userEntity.getId().toString();
 
+    const access_token = await this.authAdapter.signin({
+      email: request.email,
+      password: request.password,
+    });
+
     // Generate JWT token
     const tokenPayload = {
       id: userId,
       roles: userEntity.getRoles().map((role) => role.toString()),
+      access_token
     };
-    // const { JWT_SECRET, JWT_EXPIRES_IN } = process.env;
-    const token = ''; //jwt.sign(tokenPayload, JWT_SECRET!, { expiresIn: JWT_EXPIRES_IN });
+    const { JWT_SECRET, JWT_EXPIRES_IN } = process.env;
+    const token = jwt.sign(tokenPayload, JWT_SECRET!, { expiresIn: JWT_EXPIRES_IN });
 
     // Returns a JWT token and a signed-up user
     const outputData: SignUpEmailPasswordOutputData = {

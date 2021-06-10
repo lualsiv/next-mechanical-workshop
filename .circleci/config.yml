@@ -15,7 +15,7 @@ node: &node
   working_directory: ~/repo
   executor:
     name: 'node/default'
-    tag: '14.4.0'
+    tag: '15.0.0'
 
 orbs:
   # The Node.js orb contains a set of prepackaged CircleCI configuration you can utilize

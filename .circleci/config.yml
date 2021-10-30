@@ -49,5 +49,5 @@ jobs:
 
 workflows:
   testing-workflow:
-    jobs:
+    jobs: 
       - test
